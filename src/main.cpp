@@ -5,8 +5,8 @@
   that I have not copied it from any other source. I also certify that I have not allowed my work to be copied by others.
 */
 
-int lastcurrentButtonState = 0; // Global variable that will hold the last state/value of the button
-int lightStatus = 1;            // Global variable for the last state of the LED light. Set it to high by default to have the light off at first
+int lastButtonState = 0; // Global variable that will hold the last state/value of the button
+int lightStatus = 1;     // Global variable for the last state of the LED light. Set it to high by default to have the light off at first
 
 void setup()
 {
@@ -28,9 +28,9 @@ void loop()
   int analogValue = analogRead(A0);         // Read the analog value from the variable resistor
 
   // Check if the new button state is different than last state from previous cycle in the loop
-  if (currentButtonState != lastcurrentButtonState)
+  if (currentButtonState != lastButtonState)
   {
-    lastcurrentButtonState = currentButtonState; // Save the new button state into the global varaible
+    lastButtonState = currentButtonState; // Save the new button state into the global varaible
 
     // Check if the current state of the button is pressed
     if (currentButtonState == 0)
